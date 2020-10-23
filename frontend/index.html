@@ -14,11 +14,11 @@
     const dateButton = document.getElementById('date-button');
     const message = document.getElementById('message');
     jokeButton.addEventListener('click', async () => {
-      const resp = await fetch({ url: "/api/getDadJoke" });
+      const resp = await fetch('/api/getDadJoke');
       message.innerText = await resp.text();
     });
     dateButton.addEventListener('click', async () => {
-      const resp = await fetch({ url: "/api/getDate" });
+      const resp = await fetch('/api/getDate');
       message.innerText = await resp.text();
     });
   </script>
