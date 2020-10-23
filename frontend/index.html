@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dad Jokes</title>
+</head>
+<body>
+  <h1 id="message">hi</h1>
+  <button id="joke-button">Call dad joke API</button>
+  <button id="date-button">Call date API</button>
+
+  <script>
+    const jokeButton = document.getElementById('joke-button');
+    const dateButton = document.getElementById('date-button');
+    const message = document.getElementById('message');
+    jokeButton.addEventListener('click', async () => {
+      const resp = await fetch({ url: "/api/getDadJoke" });
+      message.innerText = await resp.text();
+    });
+    dateButton.addEventListener('click', async () => {
+      const resp = await fetch({ url: "/api/getDate" });
+      message.innerText = await resp.text();
+    });
+  </script>
+</body>
+</html>
